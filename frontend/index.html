@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Benefícios App (Skeleton)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <h1>Benefícios — Skeleton Frontend</h1>
+  <div>
+    <button id="btnCarregar">Carregar Benefícios</button>
+    <pre id="saida"></pre>
+  </div>
+
+  <div style="margin-top:16px">
+    <input id="origem" placeholder="Origem ID" type="number" />
+    <input id="destino" placeholder="Destino ID" type="number" />
+    <input id="valor" placeholder="Valor" type="number" step="0.01" />
+    <button id="btnTransferir">Transferir</button>
+    <p id="msg"></p>
+  </div>
+
+  <script type="module">
+    import { listar, transferir } from './src/app/services/beneficio.service.ts';
+
+    document.getElementById('btnCarregar').onclick = async () => {
+      try {
+        const data = await listar();
+        document.getElementById('saida').textContent = JSON.stringify(data, null, 2);
+      } catch (e) {
+        document.getElementById('saida').textContent = 'Erro ao listar: ' + e;
+      }
+    };
+
+    document.getElementById('btnTransferir').onclick = async () => {
+      const origem = Number((document.getElementById('origem') as HTMLInputElement).value);
+      const destino = Number((document.getElementById('destino') as HTMLInputElement).value);
+      const valor = Number((document.getElementById('valor') as HTMLInputElement).value);
+      try {
+        await transferir(origem, destino, valor);
+        document.getElementById('msg').textContent = 'Transferência realizada!';
+      } catch (e) {
+        document.getElementById('msg').textContent = 'Erro: ' + e;
+      }
+    };
+  </script>
+</body>
+</html>
