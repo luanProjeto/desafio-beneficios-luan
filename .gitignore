@@ -1,0 +1,21 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# Node
+node_modules/
+dist/
+.sass-cache/
+.angular/
+package-lock.json
+
+# IDEs
+*.iml
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
