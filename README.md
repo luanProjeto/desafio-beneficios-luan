@@ -1,7 +1,5 @@
 # 💳 Desafio Fullstack Integrado — Luan de Souza Santos
 
-[![Build](https://github.com/luanProjeto/desafio-beneficios-luan/actions/workflows/ci.yml/badge.svg)](https://github.com/luanProjeto/desafio-beneficios-luan/actions)
-
 Este repositório contém a solução base para o desafio em camadas: **DB**, **EJB**, **Backend (Spring Boot)** e **Frontend (Angular)**.
 
 ## 🚀 Como começar
@@ -50,21 +48,3 @@ docs/
 ---
 
 > Obs.: A integração EJB no Spring Boot está preparada via **JNDI** (exemplo de lookup no `BeneficioEjbClient`). Caso não haja servidor EJB disponível no ambiente local, o backend possui um **fallback** (somente para desenvolvimento). Ajuste as propriedades conforme seu servidor (WildFly/GlassFish/Payara).
-
-
-## 🎬 Demo (GIF)
-Inclua um GIF curto mostrando: *listar → transferir → feedback*.
-Coloque o arquivo em `docs/demo.gif` e referencie abaixo:
-
-![Demo](docs/demo.gif)
-
-
-### 🧪 Teste rápido via curl
-```
-chmod +x docs/test-transferencia.sh
-./docs/test-transferencia.sh
-```
-
-
-### 🇧🇷 Validação PT-BR
-Mensagens de validação em português configuradas via `messages.properties` e `@Valid`.

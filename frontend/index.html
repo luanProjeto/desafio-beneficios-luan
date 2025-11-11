@@ -40,21 +40,7 @@
         await transferir(origem, destino, valor);
         document.getElementById('msg').textContent = 'Transferência realizada!';
       } catch (e) {
-        const status = e?.response?.status || e?.status;
-        if (status === 409) {
-          document.getElementById('msg').textContent = 'Saldo alterado/concorrência — tente novamente.';
-        } else if (status === 400) {
-          if (data?.fields) {
-            const lista = Object.entries(data.fields).map(([k,v]) => `${k}: ${v}`).join(' | ');
-            document.getElementById('msg').textContent = 'Dados inválidos: ' + lista;
-          } else {
-            document.getElementById('msg').textContent = 'Dados inválidos. Verifique os campos.';
-          }
-        } else if (status === 404) {
-          document.getElementById('msg').textContent = 'Origem/Destino não encontrados.';
-        } else {
-          document.getElementById('msg').textContent = 'Erro inesperado.';
-        }
+        document.getElementById('msg').textContent = 'Erro: ' + e;
       }
     };
   </script>

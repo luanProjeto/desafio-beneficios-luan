@@ -17,8 +17,3 @@ spring:
 # app:
 #   ejb:
 #     jndi: "java:/global/beneficios/BeneficioEjb!br.com.luan.beneficios.ejb.BeneficioEjb"
-
-spring:
-  messages:
-    basename: messages
-    encoding: UTF-8
